@@ -44,3 +44,19 @@ count_values
 bottomk
 topk
 quantile
+
+
+Manipulation with Labels ::
+label_join
+label_replace
+label_set
+label_del
+label_keep
+label_copy
+label_move
+label_transform
+label_value
+
+
+
+
