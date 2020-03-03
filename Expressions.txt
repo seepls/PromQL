@@ -1,0 +1,46 @@
+An expression or sub-expression can be :
+1. Instant Vector : a set of time series containing a single sample for each time series, all sharing the same timestamp.
+
+2. Range Vector : a set of time series containing a range of data points over time for each time series
+3. Scalar 
+4. String 
+
+
+
+
+String Literals : " text " , 'text ',  `text`
+
+Float Literals : -3.45 
+
+
+Selector :: 
+example 1 : 
+
+http_requests_total{job="prometheus",group="canary"}
+
+selects time series with metric name = http_requests_total 
+
+
+example 2: 
+http_requests_total{environment=~"staging|testing|development",method!="GET"}
+
+
+
+ARITHMETIC BINARY OPERATOR :
+
+COMPARISION BINARY OPERATOR :
+
+VECTOR MATCHING :
+
+AGGREGATION OPERATORS:
+sum
+min
+max
+avg
+stddev
+stdvar
+count
+count_values
+bottomk
+topk
+quantile
