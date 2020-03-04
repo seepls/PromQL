@@ -1,0 +1,43 @@
+- name: normal rate
+  interval: 120s
+  rules: 
+    - record: request_rate_history
+      expr: |
+        sum(rate(http_requests_total[5m])) by (env)
+      labels:
+        when: 0w
+ 
+- record: request_rate_history
+  expr: |
+    (
+        sum(rate(http_requests_total[5m] offset 168h)) by (env)
+        and on () (
+            daily_saving_time_belgium offset 1w
+            == daily_saving_time_belgium)
+    ) or
+    ( 
+        sum(rate(http_requests_total[5m] offset 167h)) by (env)
+        and on () (
+            daily_saving_time_belgium offset 1w
+            < daily_saving_time_belgium)
+          
+    ) or
+    (
+         sum(rate(http_requests_total[5m] offset 169h)) by (env)
+         and on () (
+             daily_saving_time_belgium offset 1w
+             > daily_saving_time_belgium)
+     )
+   labels:
+     when: 1w
+
+- record: request_rate_normal
+  expr: |
+    max(bottomk(1,
+      topk(4, request_rate_history) by(env)
+    ) by(env)) by(env)
+    
+
+      
+              
+            
