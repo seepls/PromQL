@@ -13,4 +13,10 @@ use of mysqlclient to query MYSQL DB.
 1. counter : to capture the amount of times an HTTP endpoint is hit + to capture the amount of times MySQL query is executed.
 2. Histogram : to capture latency of HTTP requests and MySQL queries 
 
+#### Requirements 
 
+mysqlclient
+
+flask
+
+prometheus_client
