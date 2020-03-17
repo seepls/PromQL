@@ -5,11 +5,11 @@ from flask import Flask
 from flask_prometheus import monitor, mysql_fetchall
 
 
-#flask
+#flask : start the http server 
 app = Flask(__name__)
 
 #database
-
+# initialize the connection to the data base 
 db=MySQLdb.connect(host=os.getenv("MYSQL_HOST", "localhost"),
                    user=os.getenv("MYSQL_USER", "root"),
                    passwd=os.getenv("MYSQL_PASSWORD", ""),
