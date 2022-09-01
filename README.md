@@ -1,6 +1,6 @@
 ###  PromQL
 
-• Learning PromQL for creating Alerts in Prometheus 
+• PromQL to create Alerts in Prometheus 
 
 • PromQL : query Language for Prometheus Monitoring System
 
